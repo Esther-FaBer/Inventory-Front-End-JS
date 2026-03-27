@@ -2,7 +2,8 @@ Art Inventory:
 
 This is a full-stack web application for gallery management. Built with a Node.js backend and a React frontend, it allows galleries to manage and centralise all their operational data — from artists and artworks to exhibitions, contacts, and roles.
 
-The main features are:
+
+The main features:
 
 - Artwork Management — Add, view, edit, and delete artwork records including metadata such as title, medium, dimensions, and more
 - Artist Profiles — Maintain detailed profiles for each artist represented by the gallery
@@ -11,19 +12,37 @@ The main features are:
 - Contact Management — Keep a centralised record of contacts associated with the gallery
 - Role Management — Define and assign roles to control access and responsibilities within the platform
 
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech Stack:
 
-Currently, two official plugins are available:
+# Frontend
+- React — Component-based UI library
+- HTML5 — Markup structure
+- CSS3 — Styling and layout
+- Vite — Development server and build tool
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Backend
+- Node.js — Server-side runtime
+- REST API — Structured endpoints for all resources
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Getting Started:
 
-## Expanding the ESLint configuration
+# Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Check you have the following installed:
+
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm v9 or higher
+
+# Installation
+
+1. Clone the repository
+
+2. Install backend dependencies
+
+3. Install frontend dependencies
+
+
+# Running the App
