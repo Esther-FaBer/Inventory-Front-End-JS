@@ -12,5 +12,5 @@ import axios from "axios";
         return data;
     })
   );
-    return artistsDatas;
+    return artistsData;
   };
