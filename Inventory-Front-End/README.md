@@ -39,10 +39,29 @@ Check you have the following installed:
 # Installation
 
 1. Clone the repository
+    git clone https://github.com/Esther-FaBer/Inventory-Front-End-JS.git
 
 2. Install backend dependencies
+    cd backend
+    npm install
 
 3. Install frontend dependencies
+    cd ../frontend
+    npm install
 
 
 # Running the App
+    Start the backend server: 
+        npm run dev
+
+# API Endpoints
+
+Artists - /api/artists - Manage artists profiles
+Artworks - /api/artworks - Catalogue and manage artworks
+Exhibitions - /api/exhibitions - Create and track exhibitions
+Galleries - /api/galleries - Gallery information and details
+Contacts - /api/contacts - Manage gallery contacts
+Roles - /api/roles - Define and assign user roles
+
+# CRUD Operations:
+- GET, POST, PUT, DELETE
