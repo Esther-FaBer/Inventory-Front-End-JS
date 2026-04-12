@@ -1,11 +1,10 @@
-import { AuthProvider } from "./context/AuthContext";
 import AppRouter from "./routes/AppRouter";
 import "./index.css";
 
-const App = () => (
-  <AuthProvider>
+const App = () => {
+  return (
     <AppRouter />
-  </AuthProvider>
-);
+  );
+};
 
 export default App;
