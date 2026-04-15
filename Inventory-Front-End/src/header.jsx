@@ -13,6 +13,10 @@ const Header = () => {
     setCategory(e.target.value);
   };
  
+  const handleSubmit = () => {
+    console.log('Searching for:', searchQuery, 'in category:', category);
+  };
+
   return (
     <header className="header">
       <div className="logo">Art Inventory</div>
