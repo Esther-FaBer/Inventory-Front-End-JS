@@ -17,8 +17,36 @@
   letter-spacing: -0.5px;
 }
  
+/* Search inputs and button */
 .search-bar {
   display: flex;
   align-items: flex-end;
   gap: 16px;
+}
+
+/* Input */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+/* Label */
+.input-group label {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #5f6368;
+}
+
+.search-button {
+  height: 40px;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
 }
