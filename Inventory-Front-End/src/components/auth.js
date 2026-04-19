@@ -1,7 +1,21 @@
-import axiosInstance from './axiosInstance';
+import { useState, useCallback } from 'react';
+import { login, getMe } from '../api/authApi';
 
-export const login = (credentials) =>
-  axiosInstance.post('/auth/login', credentials);
+export function useLogin() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError]     = useState(null);
 
-export const getMe = () =>
-  axiosInstance.get('/auth/me');
+  const handleLogin = useCallback(async (credentials) => {
+    setLoading(true);
+    try {
+      const data = await login(credentials);
+      return data;
+    } catch (err) {
+      setError(err.response?.data?.message ?? 'Login failed');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  return { handleLogin, loading, error };
+}
