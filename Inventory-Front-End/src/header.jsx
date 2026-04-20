@@ -1,62 +1,69 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useSearch } from '../../context/SearchContext';
 import './Header.css';
  
 const Header = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
- 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
+  const { setSearch } = useSearch();
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
-  };
- 
-  const handleSubmit = () => {
-    console.log('Searching for:', searchQuery, 'in category:', category);
-  };
+}
 
-  return (
+ return (
     <header className="header">
-      <div className="logo">Art Inventory</div>
- 
-      <div className="search-bar">
 
-        <div className="input-group">
-          <label htmlFor="search">Search</label>
-          <input
-            type="text"
-            id="search"
-            placeholder="Search by title, artist..."
-            value={searchQuery}
-            onChange={handleSearch}
-          />
-        </div>
- 
-        <div className="input-group">
-          <label htmlFor="category">Category</label>
-          <select
-            id="category"
-            value={category}
-            onChange={handleCategoryChange}
-          >
-            <option value="all">All</option>
-            <option value="artworks">Artworks</option>
-            <option value="artists">Artists</option>
-            <option value="galleries">Galleries</option>
-            <option value="exhibitions">Exhibitions</option>
-            <option value="contacts">Contacts</option>
-          </select>
-        </div>
- 
-        <button className="search-button" onClick={handleSubmit}>
-          Search
-        </button>
- 
+      <div className="header__left">
+        <span className="header__logo">Art Inventory</span>
+
+        <nav className="header__nav">
+          {NAV_LINKS.map(({ label, path }) => (
+            <NavLink
+              key={path}
+              to={path}
+              className={({ isActive }) =>
+                isActive ? 'header__nav-link active' : 'header__nav-link'
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
       </div>
+
+      <form className="header__search" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search artworks, artists..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          aria-label="Search"
+        />
+
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          aria-label="Category"
+        >
+          {CATEGORIES.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+
+        <button type="submit">Search</button>
+      </form>
+
+      <div className="header__right">
+        <NavLink to="/add" className="header__add-btn">
+          + Add
+        </NavLink>
+        <div className="header__avatar">AI</div>
+      </div>
+
     </header>
   );
 };
- 
+
 export default Header;
