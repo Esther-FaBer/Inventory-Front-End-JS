@@ -1,52 +1,37 @@
 /* Header top container */
-.Header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 24px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  gap: 1rem;
+  height: 56px;
+  padding: 0 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 /* Logo text */
-.logo {
-  font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-weight: bold;
-  color: #444746;
-  letter-spacing: -0.5px;
-}
- 
-/* Search inputs and button */
-.search-bar {
-  display: flex;
-  align-items: flex-end;
-  gap: 16px;
+.header__logo {
+  font-size: 15px;
+  font-weight: 500;
 }
 
-/* Input */
-.input-group {
+.header__nav {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
  
-/* Label */
-.input-group label {
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  color: #5f6368;
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-shrink: 0;
 }
 
-.search-button {
-  height: 40px;
-  padding: 0 20px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #1a73e8;
-  border: none;
-  border-radius: 24px;
-  cursor: pointer;
-}
+/* .header__nav-link */
+
+/* .header__nav-link:hover */
+
+/* .header__nav-link.active */
+
+/* .header__search */

@@ -8,7 +8,11 @@ const Header = () => {
   const [category, setCategory] = useState('all');
   const { setSearch } = useSearch();
 
-}
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      setSearch(query, category);
+    };
+  
 
  return (
     <header className="header">
