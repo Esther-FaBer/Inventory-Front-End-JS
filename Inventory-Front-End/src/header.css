@@ -28,10 +28,24 @@
   flex-shrink: 0;
 }
 
-/* .header__nav-link */
+.header__nav-link {
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
 
-/* .header__nav-link:hover */
+.header__nav-link:hover {
+  background: #f5f5f5;
+  color: #111;
+}
 
-/* .header__nav-link.active */
+.header__nav-link.active {
+  color: #111;
+  font-weight: 500;
+  background: #f0f0f0;
+}
 
 /* .header__search */
