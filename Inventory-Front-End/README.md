@@ -20,10 +20,12 @@ This is a full-stack web application for gallery management. Built with a Node.j
 - HTML5 — Markup structure
 - CSS3 — Styling and layout
 - Vite — Development server and build tool
+- Axios -
 
 # Backend
 - Node.js — Server-side runtime
 - REST API — Structured endpoints for all resources
+- Supabase - 
 
 ---
 

@@ -6,6 +6,7 @@ import {
   deleteArtist,
 } from '../api/artistsApi';
 
+//fetch all artists
 export function useArtistList() {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,7 +28,7 @@ export function useArtistList() {
   return { artists, loading, error, refetch: fetchArtists };
 }
 
-
+//fetch a single artist by ID
 export function useArtistDetail(id) {
   const [artist, setArtist]   = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,25 @@ export function useArtistDetail(id) {
 
   return { artist, loading, error };
 }
+
+//create, update, delete
+export function useArtistMutations(onSuccess) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const create = useCallback(async (data) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await createArtist(data);
+      onSuccess?.('create', result);
+      return result;
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [onSuccess]);
 
   const update = useCallback(async (id, data) => {
     setLoading(true);
@@ -74,3 +94,4 @@ export function useArtistDetail(id) {
   }, [onSuccess]);
 
   return { create, update, remove, loading, error };
+}
